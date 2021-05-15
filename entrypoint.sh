@@ -5,7 +5,7 @@ set -e
 tw_lines=""  # Lines containing trailing whitespaces.
 
 # TODO (harupy): Check only changed files.
-for file in $(git ls-files | grep "\.cc\|\.h\|.json\|.rst\|.md\|.py\|SCon")
+for file in $(git ls-files | grep "\.cc\|\.h\|.json\|.rst\|.md\|.py\|SCon\|.sh")
 do
   lines=$(egrep -rnIH " +$" $file | cut -f-2 -d ":")
   if [ ! -z "$lines" ]; then
